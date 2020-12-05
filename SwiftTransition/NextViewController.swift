@@ -12,18 +12,18 @@ class NextViewController: UIViewController {
   @IBOutlet weak var label2: UILabel!
   
   var count2 = 0
-  
+  var nextFace = ""
   
   override func viewDidLoad() {
         super.viewDidLoad()
 
-      label2.text = String(count2)
+      label2.text = nextFace
     }
     
-  @IBAction func back(_ sender: Any) {
-    
-    dismiss(animated: true, completion: nil)
-  }
+//  @IBAction func back(_ sender: Any) {
+//
+//    dismiss(animated: true, completion: nil)
+//  }
   
     /*
     // MARK: - Navigation

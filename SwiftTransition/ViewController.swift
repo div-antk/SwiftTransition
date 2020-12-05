@@ -12,6 +12,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var label: UILabel!
   
   var count = 0
+  var face = "(´・ω・｀)"
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,18 +26,22 @@ class ViewController: UIViewController {
     count = count + 1
     label.text = String(count)
 
-    
-    
+
     if count == 10 {
       count = 0
-      performSegue(withIdentifier: "next", sender: nil)
+      
+      let nextVC = storyboard?.instantiateViewController(identifier: "next") as! NextViewController
+      navigationController?.pushViewController(nextVC, animated: true)
+      
+      nextVC.nextFace = face
+//      performSegue(withIdentifier: "next", sender: nil)
     }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+
     let nextVC = segue.destination as! NextViewController
-    nextVC.count2 = count
+    nextVC.nextFace = face
   }
 }
 
